@@ -1,22 +1,20 @@
 import React, { useState } from 'react'
 
-const RegisterAlumnus = () => {
+const UpdateProfile = props => {
 
     const [profile, setProfile] = useState({
-        first_name: '',
-        last_name: '',
-        id: '',
-        password: '',
-        sex: '',
-        degree: '',
-        major: '',
-        graduation: ''
+        first_name: props.first_name,
+        last_name: props.last_name,
+        id: props.id,
+        sex: props.sex,
+        degree: props.degree,
+        major: props.major,
+        graduation: props.graduation
     })
 
-    const { first_name, last_name, id, password, sex, degree, major, graduation } = profile;
+    const { first_name, last_name, id, sex, degree, major, graduation } = profile;
 
-    const onChange = (e) => {
-        //console.log("ON CHANGE KE ANDAR")
+    const onChange = e => {
         setProfile((prevState) => ({
             ...prevState,
             [e.target.name]: e.target.value
@@ -24,18 +22,16 @@ const RegisterAlumnus = () => {
         )
     }
 
-
     const onSubmit = (e) => {
         e.preventDefault();
         setProfile({
-            first_name: '',
-            last_name: '',
-            id: '',
-            password: '',
-            sex: '',
-            degree: '',
-            major: '',
-            graduation: ''
+            first_name: props.first_name,
+            last_name: props.last_name,
+            id: props.id,
+            sex: props.sex,
+            degree: props.degree,
+            major: props.major,
+            graduation: props.graduation
         })
     }
 
@@ -55,21 +51,12 @@ const RegisterAlumnus = () => {
                     <br />
                     <label>
                         Sex:
-                        <select required id='sex' name='sex' value={sex} className='form-control' onChange={onChange}>
-                            <option value="">-- Please select --</option>
-                            <option value="M">Male</option>
-                            <option value="F">Female</option>
-                        </select>
+                        <input required type="text" id='sex' name='sex' value={sex} placeholder='sex' className='form-control' onChange={onChange} />
                     </label>
                     <br />
                     <label>
                         ID:
-                        <input required type="number" id='id' name='id' value={id} placeholder='id' className='form-control' onChange={onChange} />
-                    </label>
-                    <br />
-                    <label>
-                        Password:
-                        <input required type="password" id='password' name='password' value={password} placeholder='password' className='form-control' onChange={onChange} />
+                        <input required type="number" id='id' name='id' value={id} placeholder='id' className='form-control' onChange={onChange} disabled />
                     </label>
                     <br />
                     <label>
@@ -87,12 +74,11 @@ const RegisterAlumnus = () => {
                         <input required type='number' id='graduation' name='graduation' value={graduation} placeholder='graduation' className='form-control' onChange={onChange} />
                     </label>
                     <br />
-                    <button type="submit">Register</button>
+                    <button type="submit">Update Profile</button>
                 </div>
-            </form></>
-
+            </form>
+        </>
     )
-
 }
 
-export default RegisterAlumnus
+export default UpdateProfile
