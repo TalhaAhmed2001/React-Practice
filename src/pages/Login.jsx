@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 import './App.css';
 import logo from './logo.svg';
-import momo from './momo.png'
 //import {Link} from 'react-router-dom'
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -37,7 +33,7 @@ const Login = () => {
         )
     }
     const onSubmit = (e) => {
-        
+
         e.preventDefault();
         //alert(id,password)
         console.log('id = ', id, 'password = ', password)
@@ -49,7 +45,7 @@ const Login = () => {
 
     return (
         <>
-        
+
             <ThemeProvider theme={theme}>
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
@@ -61,13 +57,13 @@ const Login = () => {
                             alignItems: 'center',
                         }}
                     >
-                        
-                        
+
+
                         <Paper sx={{ p: 4, width: 500 }} elevation={5} square>
-                            <Box sx={{ marginTop: 0, marginBottom: 0 }}>
+                            <Box sx={{ marginTop: 0, marginBottom: 0, alignItems: 'center' }}>
                                 <img src={logo} alt="logo" className="App-logo"/>
                             </Box>
-                            
+
                             <Typography component="h1" variant="h5" textAlign='center'>
                                 Sign in
                             </Typography>
