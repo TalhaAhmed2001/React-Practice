@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './App.css';
 import logo from './logo.svg';
-//import {Link} from 'react-router-dom'
+
+import AlumNet2 from '../images/AlumNet2.png';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -32,6 +33,7 @@ const Login = () => {
         })
         )
     }
+
     const onSubmit = (e) => {
 
         e.preventDefault();
@@ -55,13 +57,12 @@ const Login = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                        }}
+                    }
+                     }
                     >
-
-
                         <Paper sx={{ p: 4, width: 500 }} elevation={5} square>
                             <Box sx={{ marginTop: 0, marginBottom: 0, alignItems: 'center' }}>
-                                <img src={logo} alt="logo" className="App-logo"/>
+                                <img src={AlumNet2} alt="logo" className="Applogo" width='65%' height='65%' style={{ display: 'block', margin: 'auto' }}/>
                             </Box>
 
                             <Typography component="h1" variant="h5" textAlign='center'>

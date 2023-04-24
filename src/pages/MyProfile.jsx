@@ -1,31 +1,108 @@
-import React from 'react'
-import UpdateProfile from '../components/UpdateProfile'
+import React, { useState } from 'react'
+import UpdateProfile from '../components/profile/UpdateProfile'
 import UpdateJob from '../components/UpdateJob'
-import CreateAdvice from '../components/CreateAdvice'
 import AddJob from '../components/AddJob'
 import UpdateAdvice from '../components/UpdateAdvice'
-import CreateStory from '../components/CreateStory'
 import UpdateStory from '../components/UpdateStory'
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import CssBaseline from '@mui/material/CssBaseline';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import Navbar from '../components/navbars/Navbar'
 
 const MyProfile = () => {
+
+    const [action, setAction] = useState('My Profile')
+
+    const setProfile = () => {
+        setAction('My Profile')
+    }
+
+    const setAdvice = () => {
+        setAction('My Advices')
+    }
+
+    const setStories = () => {
+        setAction('My Stories')
+    }
+
+    const setJobs = () => {
+        setAction('My Jobs')
+    }
+
+    const drawerWidth = 250;
+
     return (
         <>
-            <h1>Profile</h1>
-            {<UpdateProfile />}
-            <h1>Add job</h1>
-            {<AddJob />}
-            <h1>update job</h1>
-            {<UpdateJob />}
-            <h1>create advice</h1>
-            {<CreateAdvice />}
-            <h1>update advice</h1>
-            {<UpdateAdvice />}
-            <h1>create story</h1>
-            {<CreateStory />}
-            <h1>update story</h1>
-            {<UpdateStory />}
+        <Navbar user_id={3}/>
+        <Box sx={{ display: 'flex' , marginTop: 10}}>
+        
+            <CssBaseline />
+            <>
+            
+            <AppBar
+                position="absolute"
+                sx={{ zIndex:0,
+                    width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`, mt:8.6 }}
+            >
+                <Toolbar>
+                    <Typography variant="h6" noWrap component="div">
+                        {action}
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+
+            <Drawer
+                position='absolute'
+                sx={{
+                    zIndex:0,
+                    width: drawerWidth,
+                    mt: 50,
+                    flexShrink: 0,
+                    '& .MuiDrawer-paper': {
+                        width: drawerWidth,
+                        boxSizing: 'border-box',
+                    },
+                }}
+                variant="permanent"
+                anchor="left"
+            >
+                <Toolbar />
+
+                <List>
+                    <Divider />
+                    <ListItemButton onClick={setProfile}>
+                        <ListItemText primary='Profile' />
+                    </ListItemButton>
+                    <Divider />
+                    <ListItemButton onClick={setAdvice}>
+                        <ListItemText primary='Advices' />
+                    </ListItemButton>
+                    <Divider />
+                    <ListItemButton onClick={setStories}>
+                        <ListItemText primary='Stories' />
+                    </ListItemButton>
+                    <Divider />
+                </List>
+            </Drawer>
+            <Box
+                component="main"
+                sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+            >
+                <Toolbar />
+                {action === 'My Profile' ? <><UpdateProfile /> <br/><UpdateJob/></>: action === 'My Advices' ? <UpdateAdvice /> : <UpdateStory />}
+            </Box>
+            </>
+        </Box>
         </>
-    )
+    );
 }
 
 export default MyProfile

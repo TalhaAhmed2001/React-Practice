@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React,{useState} from 'react'
+import AlumnusNavbar from '../components/navbars/AlumnusNavbar'
 
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,21 +15,20 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Paper from '@mui/material/Paper';
+const CreateStory = () => {
 
-const UpdateAdvice = props => {
-
-    const [advice, setAdvice] = useState({
-        ERP: props.ERP,
-        Name: props.Name,
-        category: props.category,
-        title: props.title,
-        content: props.content
+    
+    const [story, setStory] = useState({
+        ERP: '',
+        Name: '',
+        title: '',
+        content: ''
     })
 
-    const { ERP, Name, category, title, content } = advice;
+    const { ERP, Name, title, content } = story;
 
     const onChange = e => {
-        setAdvice((prevState) => ({
+        setStory((prevState) => ({
             ...prevState,
             [e.target.name]: e.target.value
         })
@@ -37,21 +37,24 @@ const UpdateAdvice = props => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        setAdvice({
-            ERP: props.ERP,
-            Name: props.Name,
-            category: props.category,
-            title: props.title,
-            content: props.content
+        setStory({
+            ERP: '',
+            Name: '',
+            title: '',
+            content: ''
         })
     }
-
+    
     const theme = createTheme();
 
-    return (
-
-        <ThemeProvider theme={theme}>
-            <Container component="main" maxWidth="l">
+  return (
+    <>
+    <AlumnusNavbar/>
+    <br/>
+    <br/>
+    <br/>
+    <ThemeProvider theme={theme}>
+            <Container component="main" maxWidth='md'>
                 <CssBaseline />
                 <Box
                     sx={{
@@ -64,36 +67,15 @@ const UpdateAdvice = props => {
 
 
                     <Paper sx={{ p: 4, }} elevation={4} >
-
-                        <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
+                    <Typography component="h1" variant="h4" textAlign='left'>
+                                Create Story
+                            </Typography>
+                        <Box component="form" onSubmit={onSubmit} sx={{ mt: 4 }}>
                             <Grid container spacing={2}>
 
 
-                                <Grid item xs={2} sm={2}>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Category *</InputLabel>
-                                        <Select
-                                            labelId='demo-simple-select-label'
-                                            name='category'
-                                            id="category"
-                                            value={category}
-                                            label="category"
-                                            onChange={onChange}
-                                            required
-                                        >
-                                            <MenuItem value={'BSCS'}>BSCS</MenuItem>
-                                            <MenuItem value={'BBA'}>BBA</MenuItem>
-                                            <MenuItem value={'SSLA'}>SSLA</MenuItem>
-                                            <MenuItem value={'General'}>General</MenuItem>
 
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-
-                                <Grid item xs={8} sm={8} />
-
-
-                                <Grid item xs={6} sm={6}>
+                                <Grid item xs={12} sm={6}>
                                     <TextField
                                         required
                                         fullWidth
@@ -104,6 +86,8 @@ const UpdateAdvice = props => {
                                         value={title}
                                     />
                                 </Grid>
+
+
 
                                 <Grid item xs={12}>
                                     <TextField
@@ -126,21 +110,9 @@ const UpdateAdvice = props => {
                                         fullWidth
                                         variant="contained"
                                         sx={{ mt: 0, mb: -2 }}
-                                        color='success'
+                                        color='secondary'
                                     >
-                                        Update
-                                    </Button>
-                                </Grid>
-                                <Grid item xs={12} sm={2}>
-
-                                    <Button
-                                        type="submit"
-                                        fullWidth
-                                        variant="contained"
-                                        sx={{ mt: 0, mb: -2 }}
-                                        color='error'
-                                    >
-                                        Delete
+                                         Create
                                     </Button>
                                 </Grid>
                             </Grid>
@@ -153,7 +125,8 @@ const UpdateAdvice = props => {
 
             </Container>
         </ThemeProvider>
-    )
+        </>
+  )
 }
 
-export default UpdateAdvice
+export default CreateStory

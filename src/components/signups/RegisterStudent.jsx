@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React,{useState} from 'react'
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -14,7 +14,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Paper from '@mui/material/Paper';
 
-const RegisterAlumnus = () => {
+
+const RegisterStudent = () => {
+
 
     const [profile, setProfile] = useState({
         first_name: '',
@@ -22,12 +24,10 @@ const RegisterAlumnus = () => {
         id: '',
         password: '',
         sex: '',
-        degree: '',
-        major: '',
-        graduation: ''
+        degree: ''
     })
 
-    const { first_name, last_name, id, password, sex, degree, major, graduation } = profile;
+    const { first_name, last_name, id, password, sex, degree } = profile;
 
     const onChange = (e) => {
         //console.log("ON CHANGE KE ANDAR")
@@ -38,6 +38,7 @@ const RegisterAlumnus = () => {
         )
     }
 
+    const theme = createTheme();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -47,15 +48,12 @@ const RegisterAlumnus = () => {
             id: '',
             password: '',
             sex: '',
-            degree: '',
-            major: '',
-            graduation: ''
+            degree: ''
         })
     }
 
-    const theme = createTheme();
-
     return (
+        
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
@@ -70,7 +68,7 @@ const RegisterAlumnus = () => {
 
                     <Paper sx={{ p: 4, width: 500 }} elevation={5} square>
                         <Typography component="h1" variant="h5" textAlign='center'>
-                            Sign up as Alumnus
+                            Sign up as Student
                         </Typography>
                         <Box component="form" onSubmit={onSubmit} sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
@@ -137,17 +135,7 @@ const RegisterAlumnus = () => {
                                         value={password}
                                     />
                                 </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <TextField
-                                        required
-                                        fullWidth
-                                        id="graduation"
-                                        label="Graduation Year"
-                                        name="graduation"
-                                        onChange={onChange}
-                                        value={graduation}
-                                    />
-                                </Grid>
+                               
                                 <Grid item xs={12} sm={6}>
                                     <TextField
                                         required
@@ -159,17 +147,7 @@ const RegisterAlumnus = () => {
                                         value={degree}
                                     />
                                 </Grid>
-                                <Grid item xs={12}>
-                                    <TextField
-                                        required
-                                        fullWidth
-                                        name="major"
-                                        label="Major"
-                                        id="major"
-                                        onChange={onChange}
-                                        value={major}
-                                    />
-                                </Grid>
+                                
 
                             </Grid>
                             <Button
@@ -177,13 +155,16 @@ const RegisterAlumnus = () => {
                                 fullWidth
                                 variant="contained"
                                 sx={{ mt: 3, mb: 2 }}
-                                color='secondary'
+                                color="secondary"
                             >
+                                
                                 Sign Up
+
+                                
                             </Button>
                             <Grid container justifyContent="flex-end">
                                 <Grid item>
-                                    <Link href="/" variant="body2">
+                                    <Link href="/login" variant="body2">
                                         Already have an account? Sign in
                                     </Link>
                                 </Grid>
@@ -196,7 +177,6 @@ const RegisterAlumnus = () => {
         </ThemeProvider>
 
     )
-
 }
 
-export default RegisterAlumnus
+export default RegisterStudent
