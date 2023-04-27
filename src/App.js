@@ -19,10 +19,9 @@ function App() {
             <Route path='/' element = {<Home/>}/>
             <Route path = '/login' element = {<Login/>}/>
             <Route path = '/register' element = {<Register/>}/>
-            <Route path = '/navbar' element = {<Navbar user_id = '3'/>}/>
-            <Route path = '/alumnus/myprofile' element = {<MyProfile/>}/>            
+            <Route path = '/navbar' element = {<Navbar user_id={1}/>}/>
+            <Route path = '/myprofile' element = {<MyProfile user_id = {2}/>}/>            
             <Route path = '/create' element = {<Create/>}/>
-            {/* <Route path = '/create/story' element = {<CreateStory/>}/> */}
           </Routes>
         </Router>
         

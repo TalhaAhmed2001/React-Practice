@@ -10,7 +10,7 @@ const Navbar = props => {
 
   return (
         <>
-        {user_id === '1' ? <AdminNavbar/> : user_id === '2' ? <StudentNavbar/> : <AlumnusNavbar/>}
+        {user_id === 1 ? <AdminNavbar/> : user_id === 2 ? <StudentNavbar/> : <AlumnusNavbar/>}
         </>
   )
 }

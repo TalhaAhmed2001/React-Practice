@@ -63,7 +63,7 @@ const AlumnusNavbar = () => {
                         
                     </>
 
-                    <Button color='inherit' component={Link} to='/alumnus/myprofile'>
+                    <Button color='inherit' component={Link} to='/myprofile'>
                         My Profile
                     </Button>
 

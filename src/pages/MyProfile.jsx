@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import UpdateProfile from '../components/profile/UpdateProfile'
+import UpdateAlumnusProfile from '../components/updates/UpdateAlumnusProfile'
 import UpdateJob from '../components/updates/UpdateJob'
 import AddJob from '../components/creates/AddJob'
 import UpdateAdvice from '../components/updates/UpdateAdvice'
@@ -16,91 +16,18 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Navbar from '../components/navbars/Navbar'
+import UpdateStudentProfile from '../components/updates/UpdateStudentProfile'
+import UpdateAlumnus from '../components/UpdateAlumnus'
+import UpdateStudent from '../components/UpdateStudent'
 
-const MyProfile = () => {
+const MyProfile = props => {
 
-    const [action, setAction] = useState('My Profile')
-
-    const setProfile = () => {
-        setAction('My Profile')
-    }
-
-    const setAdvice = () => {
-        setAction('My Advices')
-    }
-
-    const setStories = () => {
-        setAction('My Stories')
-    }
-
-    const setJobs = () => {
-        setAction('My Jobs')
-    }
-
-    const drawerWidth = 250;
-
+    const user_id = props.user_id
+    
     return (
         <>
-        <Navbar user_id={3}/>
-        <Box sx={{ display: 'flex' , marginTop: 10}}>
-        
-            <CssBaseline />
-            <>
-            
-            <AppBar
-                position="absolute"
-                sx={{ zIndex:0,
-                    width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`, mt:8.6 }}
-            >
-                <Toolbar>
-                    <Typography variant="h6" noWrap component="div">
-                        {action}
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-
-            <Drawer
-                position='absolute'
-                sx={{
-                    zIndex:0,
-                    width: drawerWidth,
-                    mt: 50,
-                    flexShrink: 0,
-                    '& .MuiDrawer-paper': {
-                        width: drawerWidth,
-                        boxSizing: 'border-box',
-                    },
-                }}
-                variant="permanent"
-                anchor="left"
-            >
-                <Toolbar />
-
-                <List>
-                    <Divider />
-                    <ListItemButton onClick={setProfile}>
-                        <ListItemText primary='Profile' />
-                    </ListItemButton>
-                    <Divider />
-                    <ListItemButton onClick={setAdvice}>
-                        <ListItemText primary='Advices' />
-                    </ListItemButton>
-                    <Divider />
-                    <ListItemButton onClick={setStories}>
-                        <ListItemText primary='Stories' />
-                    </ListItemButton>
-                    <Divider />
-                </List>
-            </Drawer>
-            <Box
-                component="main"
-                sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-            >
-                <Toolbar />
-                {action === 'My Profile' ? <><UpdateProfile /><br/><AddJob/> <br/><UpdateJob/></>: action === 'My Advices' ? <UpdateAdvice /> : <UpdateStory />}
-            </Box>
-            </>
-        </Box>
+            <Navbar user_id={user_id}/>
+            {user_id === 3 ? <UpdateAlumnus/> : <UpdateStudent/>}
         </>
     );
 }

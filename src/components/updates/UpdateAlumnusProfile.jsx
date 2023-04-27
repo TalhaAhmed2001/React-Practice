@@ -14,7 +14,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Paper from '@mui/material/Paper';
 
-const UpdateProfile = props => {
+const UpdateAlumnusProfile = props => {
 
     const [profile, setProfile] = useState({
         first_name: props.first_name,
@@ -184,4 +184,4 @@ const UpdateProfile = props => {
     )
 }
 
-export default UpdateProfile
+export default UpdateAlumnusProfile
