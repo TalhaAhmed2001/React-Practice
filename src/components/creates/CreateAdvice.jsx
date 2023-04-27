@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import AlumnusNavbar from '../components/navbars/AlumnusNavbar'
+import AlumnusNavbar from '../navbars/AlumnusNavbar'
 
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -75,7 +75,7 @@ const CreateAdvice = () => {
                             <Grid container spacing={2}>
 
 
-                                <Grid item xs={2} sm={2}>
+                                <Grid item xs={4} sm={4}>
                                     <FormControl fullWidth>
                                         <InputLabel id="demo-simple-select-label">Category *</InputLabel>
                                         <Select

@@ -164,7 +164,7 @@ const UpdateProfile = props => {
                                         type="submit"
                                         fullWidth
                                         variant="contained"
-                                        sx={{ mt: 0, mb: 2 }}
+                                        sx={{ mt: 0, mb: -2 }}
                                         color='secondary'
                                     >
                                         Update

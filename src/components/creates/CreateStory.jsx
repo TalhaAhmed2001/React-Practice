@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import AlumnusNavbar from '../components/navbars/AlumnusNavbar'
+import AlumnusNavbar from '../navbars/AlumnusNavbar'
 
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';

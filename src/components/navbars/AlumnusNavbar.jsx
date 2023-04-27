@@ -54,13 +54,8 @@ const AlumnusNavbar = () => {
                             </Button>
                         </Typography>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 0.1 }}>
-                            <Button sx={{ my: 2, color: 'inherit', display: 'block' }} component={Link} to='/create/advice'>
-                                Create Advices
-                            </Button>
-                        </Typography>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 0.1 }}>
-                            <Button sx={{ my: 2, color: 'inherit', display: 'block' }} component={Link} to='/create/story'>
-                                Add Stories
+                            <Button sx={{ my: 2, color: 'inherit', display: 'block' }} component={Link} to='/create'>
+                                Create
                             </Button>
                         </Typography>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -72,7 +67,7 @@ const AlumnusNavbar = () => {
                         My Profile
                     </Button>
 
-                    <Button color="inherit">
+                    <Button color="inherit"component={Link} to='/login'>
                         Logout
                     </Button>
                 </Toolbar>

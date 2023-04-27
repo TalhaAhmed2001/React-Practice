@@ -5,8 +5,9 @@ import Register from './pages/Register';
 import Navbar from './components/navbars/Navbar';
 import MyProfile from './pages/MyProfile';
 import Home from './pages/Home';
-import CreateStory from './pages/CreateStory';
-import CreateAdvice from './pages/CreateAdvice';
+import CreateStory from './components/creates/CreateStory';
+import CreateAdvice from './components/creates/CreateAdvice';
+import Create from './pages/Create';
 
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
             <Route path = '/register' element = {<Register/>}/>
             <Route path = '/navbar' element = {<Navbar user_id = '3'/>}/>
             <Route path = '/alumnus/myprofile' element = {<MyProfile/>}/>            
-            <Route path = '/create/advice' element = {<CreateAdvice/>}/>
-            <Route path = '/create/story' element = {<CreateStory/>}/>
+            <Route path = '/create' element = {<Create/>}/>
+            {/* <Route path = '/create/story' element = {<CreateStory/>}/> */}
           </Routes>
         </Router>
         

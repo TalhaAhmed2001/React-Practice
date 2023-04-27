@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import UpdateProfile from '../components/profile/UpdateProfile'
-import UpdateJob from '../components/UpdateJob'
-import AddJob from '../components/AddJob'
-import UpdateAdvice from '../components/UpdateAdvice'
-import UpdateStory from '../components/UpdateStory'
+import UpdateJob from '../components/updates/UpdateJob'
+import AddJob from '../components/creates/AddJob'
+import UpdateAdvice from '../components/updates/UpdateAdvice'
+import UpdateStory from '../components/updates/UpdateStory'
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -97,7 +97,7 @@ const MyProfile = () => {
                 sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
             >
                 <Toolbar />
-                {action === 'My Profile' ? <><UpdateProfile /> <br/><UpdateJob/></>: action === 'My Advices' ? <UpdateAdvice /> : <UpdateStory />}
+                {action === 'My Profile' ? <><UpdateProfile /><br/><AddJob/> <br/><UpdateJob/></>: action === 'My Advices' ? <UpdateAdvice /> : <UpdateStory />}
             </Box>
             </>
         </Box>
