@@ -43,12 +43,12 @@ const StudentNavbar = () => {
                             </Button>
                         </Typography>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 0.1 }}>
-                            <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                            <Button sx={{ my: 2, color: 'white', display: 'block' }} component={Link} to='/stories'>
                                 Stories
                             </Button>
                         </Typography>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 0.1 }}>
-                            <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                            <Button sx={{ my: 2, color: 'white', display: 'block' }} component={Link} to='/advices'>
                                 Advices
                             </Button>
                         </Typography>

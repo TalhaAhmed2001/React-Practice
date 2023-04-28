@@ -9,6 +9,8 @@ import Create from './pages/Create';
 import PendingProfiles from './pages/PendingProfiles';
 import PromotingStudents from './pages/PromotingStudents';
 import Eradication from './pages/Eradication';
+import Stories from './pages/Stories';
+import Advices from './pages/Advices';
 
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
       <h1>
         <Router>
           <Routes>
-            <Route path='/' element = {<Home user_id={1}/>}/>
+            <Route path='/' element = {<Home user_id={3}/>}/>
             <Route path = '/login' element = {<Login/>}/>
             <Route path = '/register' element = {<Register/>}/>
             <Route path = '/navbar' element = {<Navbar user_id={1}/>}/>
@@ -26,6 +28,8 @@ function App() {
             <Route path = '/pendingprofiles' element = {<PendingProfiles/>}/>
             <Route path = '/promotingstudents' element = {<PromotingStudents/>}/>
             <Route path = '/eradication' element = {<Eradication/>}/>
+            <Route path = '/stories' element = {<Stories/>}/>
+            <Route path = '/advices' element = {<Advices/>}/>
           </Routes>
         </Router>
         

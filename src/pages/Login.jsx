@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './App.css';
 import logo from './logo.svg';
-
+import Icon from '../images/icon';
 import AlumNet2 from '../images/AlumNet2_1.png';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -63,6 +63,7 @@ const Login = () => {
                         <Paper sx={{ p: 4, width: 500 }} elevation={5} square>
                             <Box sx={{ marginTop: 0, marginBottom: 1, alignItems: 'center' }}>
                                 <img src={AlumNet2} alt="logo" className="Applogo" width='50%' height='50%' style={{ display: 'block', margin: 'auto' }}/>
+                                {/* <Icon alt="logo" className="Applogo" width='100%' height='100%' style={{ display: 'block', margin: 'auto' }}/> */}
                             </Box>
 
                             <Typography component="h1" variant="h5" textAlign='center'>
