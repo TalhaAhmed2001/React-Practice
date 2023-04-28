@@ -37,17 +37,17 @@ const AdminNavbar = () => {
                     </Typography>
                     <>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 0.1 }}>
-                            <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                            <Button sx={{ my: 2, color: 'white', display: 'block' }} component={Link} to='/pendingprofiles'>
                                 Pending
                             </Button>
                         </Typography>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 0.1 }}>
-                            <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 0.1 }} >
+                            <Button sx={{ my: 2, color: 'white', display: 'block' }} component={Link} to='/promotingstudents'>
                                 Promotions
                             </Button>
                         </Typography>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 0.1 }}>
-                            <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                            <Button sx={{ my: 2, color: 'white', display: 'block' }} component={Link} to='/eradication'>
                                 Eradicate
                             </Button>
                         </Typography>
@@ -58,7 +58,7 @@ const AdminNavbar = () => {
                         
                     </>
 
-                    <Button color="inherit"component={Link} to='/login'>
+                    <Button color="inherit" component={Link} to='/login'>
                         Logout
                     </Button>
                 </Toolbar>

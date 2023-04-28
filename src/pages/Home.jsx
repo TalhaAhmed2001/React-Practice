@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 const Home = props => {
 
-    const id = 3 //props.user_id
+    const id = props.user_id
 
     const styles = {
         background: {
