@@ -5,15 +5,10 @@ import Grid from '@mui/material/Grid';
 
 import Paper from '@mui/material/Paper';
 
-const Advice = props => {
+const Advice = ({props}) => {
 
-    var { ERP, Name, category, title, content } = props
+    const { ERP, Name, category, title, content } = props
 
-    title = "Title"
-    Name = 'Name'
-    ERP = 22846
-    category = 'general'
-    content = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.'
     return (
         <>
             <br />

@@ -49,7 +49,6 @@ const CreateStory = () => {
 
   return (
     <>
-    <AlumnusNavbar/>
     <br/>
     <br/>
     <br/>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Story from '../components/Story'
 import Navbar from '../components/navbars/Navbar'
+import Alumnus from '../components/Alumnus'
 
 import { Box, Paper, Typography } from '@mui/material'
 
@@ -16,71 +16,60 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const Stories = () => {
+const Alumni = () => {
 
-    let stori = {
-        "totalPages": 5,
+    let profil = {
+        "totalPages": {
+            "": 4
+        },
         "currentPage": 1,
-        "stories": [
+        "alumni": [
             {
-                "_id": "6411af44f97cee7c2ff60141",
-                "ERP": 22767,
-                "Name": "Mir Hamza Ali",
-                "title": "This is title of my updated2 story",
-                "content": "This is the content of updated2 first story",
-                "popularity": 0,
-                "date": "2023-03-15T11:43:00.946Z",
-                "createdAt": "2023-03-15T11:43:00.947Z",
-                "updatedAt": "2023-03-15T14:49:56.825Z",
-                "__v": 0
+                "id": 22222,
+                "first_name": "MIR UMAR",
+                "last_name": "ALI",
+                "sex": "M",
+                "degree": "BSCS",
+                "major": "Game Dev",
+                "graduation": 2000
             },
             {
-                "_id": "6411b95960a6e0578710c891",
-                "ERP": 22768,
-                "Name": "Talha Ahmed",
-                "title": "This is title of my updated story",
-                "content": "This is the content of my updated story",
-                "popularity": 0,
-                "date": "2023-03-15T12:26:01.500Z",
-                "createdAt": "2023-03-15T12:26:01.511Z",
-                "updatedAt": "2023-03-15T12:26:01.511Z",
-                "__v": 0
+                "id": 22747,
+                "first_name": "JANE",
+                "last_name": "DOE",
+                "sex": "F",
+                "degree": "BSCS",
+                "major": "Game Dev",
+                "graduation": 2000
             },
             {
-                "_id": "6411c6f052c703a8e14bfd7d",
-                "ERP": 22767,
-                "Name": "Mir Hamza Ali",
-                "title": "This is title of my updated3 story",
-                "content": "This is the content of updated3 second story",
-                "popularity": 0,
-                "date": "2023-03-15T13:24:00.728Z",
-                "createdAt": "2023-03-15T13:24:00.734Z",
-                "updatedAt": "2023-03-15T15:06:24.598Z",
-                "__v": 0
+                "id": 22767,
+                "first_name": "MIR HAMZA",
+                "last_name": "ALI",
+                "sex": "M",
+                "degree": "BSCS",
+                "major": "Game Dev",
+                "graduation": 2000
             },
             {
-                "_id": "6411fac0c964e666926d68c4",
-                "ERP": 22767,
-                "Name": "Mir Hamza Ali",
-                "title": "This is title of my Another story",
-                "content": "This is the content of Another story",
-                "popularity": 0,
-                "date": "2023-03-15T17:05:04.952Z",
-                "createdAt": "2023-03-15T17:05:04.966Z",
-                "updatedAt": "2023-03-15T17:05:04.966Z",
-                "__v": 0
+                "id": 44444,
+                "first_name": "ALI",
+                "last_name": "SHAIKH",
+                "sex": "M",
+                "degree": "BSCS",
+                "major": null,
+                "graduation": null
             }
         ]
     }
 
+    const [totalPages, setTotalPages] = useState(profil.totalPages)
+    const [currentPage, setCurrentPage] = useState(profil.currentPage)
 
     const [query, setQuery] = useState({
         filter: '',
         search: ''
     })
-
-    const [totalPages, setTotalPages] = useState(stori.totalPages)
-    const [currentPage, setCurrentPage] = useState(stori.currentPage)
 
     const { filter, search } = query
 
@@ -98,7 +87,6 @@ const Stories = () => {
     const onFilter = e => {
 
     }
-
     return (
         <>
             <Navbar user_id={3} />
@@ -114,7 +102,7 @@ const Stories = () => {
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={2}>
                             <Typography variant="h3" textAlign='left' sx={{ fontWeight: 'bold' }}>
-                                Stories
+                                Alumni
                             </Typography>
                         </Grid>
 
@@ -127,7 +115,7 @@ const Stories = () => {
                                 label=""
                                 onChange={onChange}
                                 value={search}
-                                placeholder='Enter Search thing here...'
+                                placeholder='Search Alumni by full name...'
                             />
                         </Grid>
                         <Grid item xs={12} sm={2}>
@@ -143,13 +131,13 @@ const Stories = () => {
                         </Grid>
                         <Grid item xs={12} sm={2}>
                             <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">Filter *</InputLabel>
+                                <InputLabel id="demo-simple-select-label">filter by degree</InputLabel>
                                 <Select
                                     labelId='demo-simple-select-label'
                                     name='filter'
                                     id="filter"
                                     value={filter}
-                                    label="filter"
+                                    label="filter by degree"
                                     onChange={onChange}
                                 >
                                     <MenuItem value={'General'}>General</MenuItem>
@@ -176,12 +164,12 @@ const Stories = () => {
 
             </Box>
             {
-                (stori.stories).map((story) => (
-                    <Story props={story}/>
+                (profil.alumni).map((profile)=>(
+                    <Alumnus props={profile}/>
                 ))
             }
         </>
     )
 }
 
-export default Stories
+export default Alumni

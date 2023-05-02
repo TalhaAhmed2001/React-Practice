@@ -1,20 +1,15 @@
 import { Container, CssBaseline, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
 import Paper from '@mui/material/Paper';
 
 
-const Story = props => {
+const Story = ({props}) => {
 
-    var { ERP, Name, title, content } = props
+    const { ERP, Name, title, content } = props;
 
-    title = "Title"
-    Name = 'Name'
-    ERP = 22846
-    content = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.'
-    
     return (
         <>
             <br />
@@ -39,12 +34,12 @@ const Story = props => {
                                 </Typography>
                             </Grid>
 
-                            
+
                             <Grid item xs={12} sm={12}>
                             </Grid>
                             <Grid item xs={12} sm={12}>
                                 <Typography variant='subtitle2' textAlign='left' sx={{ mt: -2 }}>
-                                    {content}
+                                    {content}{console.log(content)}
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} sm={12}>
@@ -54,7 +49,7 @@ const Story = props => {
                                     {Name}{' '}{ERP}
                                 </Typography>
                             </Grid>
-                            
+
 
                         </Grid>
 

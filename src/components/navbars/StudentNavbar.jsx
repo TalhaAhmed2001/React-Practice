@@ -16,7 +16,7 @@ const StudentNavbar = () => {
             <AppBar position="fixed" zIndex='0'>
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
                     {/* <Box sx={{ display:'flex', alignItems: 'center', ml: -1}}> */}
-                    <img src={AlumNet2} alt="logo" width='5%' height='5%' />
+                    <img src={AlumNet2} alt="logo" height='70vmin' />
                     {/* </Box> */}
                     <Typography
                         variant="h4"
@@ -38,7 +38,7 @@ const StudentNavbar = () => {
                     </Typography>
                     <>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 0.1 }}>
-                            <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                            <Button sx={{ my: 2, color: 'white', display: 'block' }} component={Link} to='/alumni'>
                                 Alumni
                             </Button>
                         </Typography>

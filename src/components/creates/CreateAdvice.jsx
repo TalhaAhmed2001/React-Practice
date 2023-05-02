@@ -51,7 +51,6 @@ const CreateAdvice = () => {
 
   return (
     <>
-    <AlumnusNavbar/>
     <br/>
     <br/>
     <ThemeProvider theme={theme}>
